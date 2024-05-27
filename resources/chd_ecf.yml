@@ -65,10 +65,20 @@
         URL: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
         dest: /tmp/test.zip
 
+    - name: "Unzip the test.zip"
+      unarchive:
+        src: /tmp/test.zip
+        dest: /tmp/test
+
     - name: "Download the rx.zip"
       get_url:
         URL: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
         dest: /tmp/rx.zip
+
+    - name: "Unzip the rx.zip"
+      unarchive:
+        src: /tmp/rx.zip
+        dest: /tmp/rx
 
     - name: "Download the Dockerfile from Github"
       get_url:
