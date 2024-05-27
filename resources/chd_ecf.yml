@@ -1,4 +1,4 @@
-- hosts: metaworks_ecf_vmm
+- hosts: chd_ecf_vmm
   become: yes
   become_method: sudo
   vars:
