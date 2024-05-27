@@ -64,15 +64,15 @@ VerifyAndInstallPackage 'vagrant'
 VerifyAndInstallPackage 'virtualbox-7.0'
 
 # Download the scripts from Github
-# wget https://raw.githubusercontent.com/adornogomes/MetaWorks_Based_On_ECF_Framework/main/Vagrantfile -O Vagrantfile
- wget https://raw.githubusercontent.com/adornogomes/MetaWorks_Based_On_ECF_Framework/main/metaworks_ecf.yml -O metaworks_ecf.yml
+wget https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/Vagrantfile -O Vagrantfile
+wget https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/chd_ecf.yml -O metaworks_ecf.yml
 
 # Run vagrant up command
- vagrant up
+vagrant up
 
 # Check the exit code of the command
- if [ $? -eq 0 ]; then
-    echo "The MetaWorks Pipeline is up and running."
- else
+if [ $? -eq 0 ]; then
+    echo "The CHD environment is up and ready to run the application."
+else
     echo "vagrant up failed."
 fi
