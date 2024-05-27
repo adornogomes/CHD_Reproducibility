@@ -62,7 +62,7 @@
 
     - name: "Download the test.zip"
       get_url:
-        URL: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
+        url: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
         dest: /tmp/test.zip
 
     - name: "Unzip the test.zip"
@@ -72,7 +72,7 @@
 
     - name: "Download the rx.zip"
       get_url:
-        URL: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
+        url: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
         dest: /tmp/rx.zip
 
     - name: "Unzip the rx.zip"
