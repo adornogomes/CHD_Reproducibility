@@ -35,13 +35,38 @@
     - name: "Install the Docker Community Edition"
       apt: name=docker-ce state=latest
 
-    - name: "Baixar o Dockerfile do Github"
+    - name: "Download the file label_image.py from Github"
       get_url:
-        url: https://raw.githubusercontent.com/adornogomes/Aula1/main/Dockerfile
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/label_image.py
+        dest: /tmp/label_image.py
+
+    - name: "Download the file retrain.py from Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/retrain.py
+        dest: /tmp/retrain.py
+
+    - name: "Download the file run_label_cda.sh from Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_label_cda.sh
+        dest: /tmp/run_label_cda.sh
+        
+    - name: "Download the file run_label_sda.sh from Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_label_sda.sh
+        dest: /tmp/run_label_sda.sh
+
+    - name: "Download the file run_training.sh from Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_training.sh
+        dest: /tmp/run_training.sh        
+
+    - name: "Download the Dockerfile from Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/Dockerfile
         dest: /tmp/Dockerfile
 
-    - name: "Build da imagem"
-      command: docker build -t chd_ecf:1.0 .
+    - name: "Building the image"
+      command: docker build -t chd_ecf:1.0 /tmp/Dockerfile
  
     - name: "Running the Docker container"
       docker_container:
