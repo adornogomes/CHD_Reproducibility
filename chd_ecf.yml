@@ -1,0 +1,52 @@
+- hosts: metaworks_ecf_vmm
+  become: yes
+  become_method: sudo
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: "Update apt-get repository and cache"
+      apt: update_cache=yes cache_valid_time=3600 force_apt_get=yes
+
+    - name: "Install pip"
+      apt: name=python3-pip state=present
+
+    - name: "Install docker-py package"
+      pip: name=docker-py
+
+    - name: "Install https package for apt"
+      apt: name=apt-transport-https state=latest
+
+    - name: "Install certificates package for apt"
+      apt: name=ca-certificates state=latest
+
+    - name: "Install software-properties-common package for apt"
+      apt: name=software-properties-common state=latest
+
+    - name: "Install curl"
+      apt: name=curl state=latest
+
+    - name: "Download the Docker's official GPG key"
+      shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+    - name: "Configure the Docker's official repository"
+      shell: add-apt-repository "deb [arch=amd64] 
+        https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+    - name: "Install the Docker Community Edition"
+      apt: name=docker-ce state=latest
+
+    - name: "Baixar o Dockerfile do Github"
+      get_url:
+        url: https://raw.githubusercontent.com/adornogomes/Aula1/main/Dockerfile
+        dest: /tmp/Dockerfile
+
+    - name: "Build da imagem"
+      command: docker build -t chd_ecf:1.0 .
+ 
+    - name: "Running the Docker container"
+      docker_container:
+        name: chd_ecf_container1
+        image: chd_ecf:1.0
+        interactive: yes
+        tty: yes
+        pull: yes
