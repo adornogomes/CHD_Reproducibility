@@ -65,7 +65,7 @@ VerifyAndInstallPackage 'virtualbox-7.0'
 
 # Download the scripts from Github
 wget https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/Vagrantfile -O Vagrantfile
-wget https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/chd_ecf.yml -O metaworks_ecf.yml
+wget https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/chd_ecf.yml -O chd_ecf.yml
 
 # Run vagrant up command
 vagrant up
