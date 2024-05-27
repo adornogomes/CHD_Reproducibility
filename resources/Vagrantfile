@@ -8,8 +8,8 @@
 Vagrant.configure("2") do |config|
   
   # Define the virtual machine image
-  # Ubuntu Bionic 22.04 64 bits
-  config.vm.box = "bento/ubuntu-22.04"
+  # Ubuntu 18.04 64 bits
+  config.vm.box = "bento/ubuntu-18.04"
 
   # Define the hostname and the network
   config.vm.define :chd_ecf_vmm do |chd_config|
