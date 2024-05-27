@@ -60,6 +60,16 @@
         url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_training.sh
         dest: /tmp/run_training.sh        
 
+    - name: "Download the test.zip"
+      get_url:
+        URL: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
+        dest: /tmp/test.zip
+
+    - name: "Download the rx.zip"
+      get_url:
+        URL: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
+        dest: /tmp/rx.zip
+
     - name: "Download the Dockerfile from Github"
       get_url:
         url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/Dockerfile
