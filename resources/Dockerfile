@@ -31,8 +31,8 @@ WORKDIR /exp
 COPY run_training.sh run_label_sda.sh run_label_cda.sh label_image.py retrain.py /exp/
 
 # Copiar um diretório completo para a imagem
-#COPY rx /exp/rx
-#COPY test /exp/test
+COPY rx /exp/rx
+COPY test /exp/test
 
 # Expose the TensorBoard port
 EXPOSE 6006
