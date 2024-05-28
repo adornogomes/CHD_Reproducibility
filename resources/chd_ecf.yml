@@ -13,6 +13,9 @@
     - name: "Install docker-py package"
       pip: name=docker-py
 
+    - name: "Install gdown package"
+      pip: name=gdown
+
     - name: "Install https package for apt"
       apt: name=apt-transport-https state=latest
 
@@ -63,15 +66,11 @@
         url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_training.sh
         dest: /tmp/run_training.sh        
 
-    - name: "Unzip the test.zip"
-      get_url:
-        url: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
-        dest: /tmp/test.zip
+    - name: "Download the test.zip"
+      shell: gdown https://drive.google.com/uc?id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa && mv test.zip /tmp/test.zip
 
-    - name: "Unzip the rx.zip"
-      get_url:
-        url: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
-        dest: /tmp/rx.zip
+    - name: "Download the test.zip"
+      shell: gdown https://drive.google.com/uc?id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt && mv rx.zip /tmp/rx.zip
 
     - name: "Download the Dockerfile from Github"
       get_url:
