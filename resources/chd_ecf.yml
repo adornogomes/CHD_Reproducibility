@@ -79,7 +79,7 @@
         dest: /tmp/Dockerfile
 
     - name: "Building the image"
-      command: docker build -t chd_ecf:1.0 /tmp/Dockerfile
+      command: docker build -t chd_ecf:1.0 /tmp/.
  
     - name: "Running the Docker container"
       docker_container:
