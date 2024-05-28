@@ -64,16 +64,14 @@
         dest: /tmp/run_training.sh        
 
     - name: "Unzip the test.zip"
-      unarchive:
-        src: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
-        dest: /tmp/
-        remote_src: yes
+      get_url:
+        url: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
+        dest: /tmp/test.zip
 
     - name: "Unzip the rx.zip"
-      unarchive:
-        src: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
-        dest: /tmp/
-        remote_src: yes
+      get_url:
+        url: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
+        dest: /tmp/rx.zip
 
     - name: "Download the Dockerfile from Github"
       get_url:
