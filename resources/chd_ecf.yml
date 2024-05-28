@@ -67,10 +67,10 @@
         dest: /tmp/run_training.sh        
 
     - name: "Download the test.zip"
-      shell: gdown https://drive.google.com/uc?id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa && mv test.zip /tmp/test.zip
+      shell: gdown https://drive.google.com/uc?id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa && unzip test.zip -d /tmp
 
     - name: "Download the test.zip"
-      shell: gdown https://drive.google.com/uc?id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt && mv rx.zip /tmp/rx.zip
+      shell: gdown https://drive.google.com/uc?id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt && unzip rx.zip -d /tmp
 
     - name: "Download the Dockerfile from Github"
       get_url:
