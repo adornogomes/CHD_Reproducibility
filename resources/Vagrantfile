@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # Define the hostname and the network
   config.vm.define :chd_ecf_vmm do |chd_config|
     chd_config.vm.hostname = "chd-ecf-vmm"
-    chd_config.vm.network "private_network", type "dhcp"
+    chd_config.vm.network "private_network", type="dhcp"
 
     # Define the Ansible configuration
     chd_config.vm.provision "ansible_local" do |ansible|
