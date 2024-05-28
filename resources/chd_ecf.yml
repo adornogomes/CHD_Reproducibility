@@ -63,25 +63,15 @@
         url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/run_training.sh
         dest: /tmp/run_training.sh        
 
-    - name: "Download the test.zip"
-      get_url:
-        url: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
-        dest: /tmp/test.zip
-
     - name: "Unzip the test.zip"
       unarchive:
-        src: /tmp/test.zip
+        src: https://docs.google.com/uc?export=download&id=1SuY3D0mHM4Y-BYXyewDqqYDCSq2BCnaa
         dest: /tmp/
         remote_src: yes
 
-    - name: "Download the rx.zip"
-      get_url:
-        url: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
-        dest: /tmp/rx.zip
-
     - name: "Unzip the rx.zip"
       unarchive:
-        src: /tmp/rx.zip
+        src: https://docs.google.com/uc?export=download&id=1qEagArIY8sw1Y1dAOTBu4G4TSWrjz-bt
         dest: /tmp/
         remote_src: yes
 
