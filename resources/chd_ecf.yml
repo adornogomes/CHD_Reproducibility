@@ -22,6 +22,9 @@
     - name: "Install software-properties-common package for apt"
       apt: name=software-properties-common state=latest
 
+    - name: "Install unzip"
+      apt: name=unzip state=latest      
+
     - name: "Install curl"
       apt: name=curl state=latest
 
