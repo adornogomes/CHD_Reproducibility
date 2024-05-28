@@ -76,14 +76,3 @@
       get_url:
         url: https://raw.githubusercontent.com/adornogomes/CHD_Reproducibility/main/resources/Dockerfile
         dest: /tmp/Dockerfile
-
-    - name: "Building the image"
-      command: docker build -t chd_ecf:1.0 /tmp/.
- 
-    - name: "Running the Docker container"
-      docker_container:
-        name: chd_ecf_container1
-        image: chd_ecf:1.0
-        interactive: yes
-        tty: yes
-        pull: yes
