@@ -72,6 +72,7 @@
       unarchive:
         src: /tmp/test.zip
         dest: /tmp/
+        remote_src: yes
         copy: no
 
     - name: "Download the rx.zip"
@@ -83,6 +84,7 @@
       unarchive:
         src: /tmp/rx.zip
         dest: /tmp/
+        remote_src: yes
         copy: no
 
     - name: "Download the Dockerfile from Github"
