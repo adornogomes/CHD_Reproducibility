@@ -68,7 +68,7 @@
     - name: "Unzip the test.zip"
       unarchive:
         src: /tmp/test.zip
-        dest: /tmp/test
+        dest: /tmp
 
     - name: "Download the rx.zip"
       get_url:
@@ -78,7 +78,7 @@
     - name: "Unzip the rx.zip"
       unarchive:
         src: /tmp/rx.zip
-        dest: /tmp/rx
+        dest: /tmp
 
     - name: "Download the Dockerfile from Github"
       get_url:
