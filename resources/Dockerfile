@@ -1,36 +1,36 @@
-# Use Ubuntu 18.04 como imagem base
+# Ubuntu 18.04 was defined as the base image
 FROM ubuntu:18.04
 
-# Definir o responsável pela imagem
+# Owner of the image
 LABEL maintainer="adornogomes@gmail.com"
 
-# Definir a variável de ambiente ARCHITECTURE
+# This environment variable is used during the execution of the application
 ENV ARCHITECTURE=InceptionV3
 
-# Atualizar a lista de pacotes e instalar alguns pacotes essenciais
+# Update the package list and install some essential packages
 RUN apt-get update && \
      apt-get install -y \
      software-properties-common
 
-# Garantir que pip3 esteja instalado
+# Install pip3
 RUN apt-get install -y python3-pip
 
-# Instalar Protobuf 3.19.6 usando pip3
+# Install Protobuf 3.19.6 using pip3
 RUN pip3 install protobuf==3.19.6
 
-# Instalar TensorFlow 1.7.0 usando pip3
+# Install TensorFlow 1.7.0 using pip3
 RUN pip3 install tensorflow==1.7.0
 
-# Criar o diretório /output
+# Create a directory named "output"
 RUN mkdir /output
 
-# Definir o diretório de trabalho
+# Define the work directory
 WORKDIR /exp
 
-# Copiar múltiplos arquivos para a imagem
+# Copy all the files to the image
 COPY run_training.sh run_label_sda.sh run_label_cda.sh label_image.py retrain.py /exp/
 
-# Copiar um diretório completo para a imagem
+# Copy the directories "rx" and "test" to the image
 COPY rx /exp/rx
 COPY test /exp/test
 
